@@ -1,4 +1,8 @@
-const extend = require('../extendJSConfig')
+const _extend = require('../extendJSConfig')
+
+function extend (value, source) {
+  return _extend(value, source).replace(/\n\r/g, '\n')
+}
 
 test(`basic`, () => {
   const value = {
